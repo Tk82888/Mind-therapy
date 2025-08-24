@@ -1,0 +1,51 @@
+#Confirmed! I will now generate and organize the full, professional repository scaffold for Mind trader with:All core modules (quantum MANN, LLM integration/fine-tuning, semantic retrieval, RLHF, multimodal, API, enhancements)Deployment tooling (Dockerfile, Kubernetes manifests, requirements.txt, environment.yml)CI/CD with GitHub Actions (.github/workflows/)Comprehensive documentation (README, architecture, roadmap, stakeholder/investor comms, provisional patent draft)Legal and copyright noticesPython 3.10+ compatibility with all dependencies pinneddef update_position(self, symbol, qty, price):
+    current_qty, avg_price = self.positions.get(symbol, (0, 0))
+    new_qty = current_qty + qty
+    if new_qty == 0:
+        self.positions.pop(symbol, None)
+        return
+    new_avg = ((current_qty * avg_price) + (qty * price)) / new_qty if new_qty != 0 else 0
+    self.positions[symbol] = (new_qty, new_avg)
+
+def calculate_pnl(self, latest_prices):
+    unrealized_pnl = 0
+    for symbol, (qty, avg_price) in self.positions.items():
+        market_price = latest_prices.get(symbol, avg_price)
+        unrealized_pnl += qty * (market_price - avg_price)
+    total_value = self.cash + unrealized_pnl
+    return total_value, unrealized_pnlhttps://github.com/Tk82888/Mind-therapy/issues/1I paid for git hub pro and have not been able to access ithttps://support.github.com/contacthttps://github.com/Tk82888/Mind-therapy.gitgh repo clone Tk82888/Mind-therapy This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
